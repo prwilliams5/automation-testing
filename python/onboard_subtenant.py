@@ -28,7 +28,7 @@ def create_subtenant():
         "currency": subten_currency
         }
     }
-    response = requests.post(url=url, json=payload, HEADERS=HEADERS, verify=False)
+    response = requests.post(url=url, json=payload, headers=HEADERS, verify=False)
     data = response.json()
     tenant_id = data['account']['id']
     return tenant_id
@@ -56,7 +56,7 @@ def create_admin_user(tenant_id):
         "password": subten_admin_pw
         }
     }
-    response = requests.post(url=url, json=payload, HEADERS=HEADERS, verify=False)
+    response = requests.post(url=url, json=payload, headers=HEADERS, verify=False)
 
 # creates and gets admin user's access token
 def get_admin_token():
